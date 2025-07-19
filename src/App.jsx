@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
 import Header from "./components/Header/Header";
@@ -30,16 +30,19 @@ const App = () => {
   }, [dispatch]);
 
   return !loading ? (
-    <div>
-      <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+    <div className="relative min-h-screen flex flex-col">
+      {/* Particle Background */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
         <ParticlesBackground />
       </div>
- 
+
       <Header />
 
-      <main className="flex-grow min-h-screen">
+      {/* Main Content */}
+      <main className="flex-grow">
         <Outlet />
       </main>
+
       <Footer />
     </div>
   ) : null;
