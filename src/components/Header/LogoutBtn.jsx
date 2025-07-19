@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import authService from "../../appwrite/auth.js"
-import logout  from "../../store/authSlice.js"
+import {logout}  from "../../store/authSlice.js"
 import { useNavigate } from 'react-router-dom'
 
 const LogoutBtn = () => {
@@ -9,9 +9,10 @@ const LogoutBtn = () => {
     const navigate = useNavigate()
     const logOutHandler = () => {
         authService.logout().then(()=>{
-            dispatch(logout())              // to update the state
+            dispatch(logout())  
+            navigate("/login");            // to update the state
         })
-        navigate('/login')
+        
         
     }
   return (

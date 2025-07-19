@@ -12,7 +12,7 @@ const Posts = () => {
     const {id} = useParams();
     const navigate = useNavigate();
     const userData = useSelector(state => state.auth.userData);
-    const isAuthor = post && userData ? post.userId === userData.$id : false
+    const isAuthor = post && userData ? post.userid === userData.$id : false
     const dispatch = useDispatch();
     const error = useSelector(state => state.posts.error);
     const loading = useSelector(state => state.posts.loading);
@@ -57,7 +57,7 @@ const Posts = () => {
                     <img
                         src={appwriteService.getImage(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="w-full max-w-4xl aspect-video overflow-hidden rounded-xl shadow-lg border border-white/10 bg-black"
                     />
 
                     {isAuthor && (
@@ -76,7 +76,7 @@ const Posts = () => {
                 <div className="w-full mb-6">
                     <h1 className="text-2xl font-bold">{post.title}</h1>
                 </div>
-                <div className="browser-css">
+                <div className="browser-css text-white">
                     {parser(post.content)}
                     </div>
             </Container>

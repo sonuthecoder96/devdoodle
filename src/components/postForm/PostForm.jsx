@@ -42,9 +42,9 @@ const PostForm = ({post}) => {
                     const fileId = file.$id
                     data.featuredImage = fileId;
                     const newPost = await appwriteService.createPost({
-                        ...data,
-                        userId: userData.$id
-                    })
+                      ...data,
+                      userid: userData.$id,
+                    });
                     if(newPost){
                         dispatch(addPost(newPost));
                         navigate(`/post/${newPost.$id}`)

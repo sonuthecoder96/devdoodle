@@ -14,7 +14,7 @@ export class Service{
         this.databases = new Databases(this.client)
     }
 
-    async createPost({title , slug , content , featuredImage, status, userId}){
+    async createPost({title , slug , content , featuredImage, status, userid}){
         try {
             return await this.databases.createDocument(
                 confg.appwriteDatabaseId,
@@ -26,7 +26,7 @@ export class Service{
                 content,
                 featuredImage,
                 status,
-                userId
+                userid
             }
         );
         } catch (error) {
@@ -34,7 +34,7 @@ export class Service{
         }
     }
     
-    async updatePost(documentId,{title , slug , content , featuredImage, status,userId}){
+    async updatePost(documentId,{title , slug , content , featuredImage, status,userid}){
         try {
             return await this.databases.updateDocument(
                 confg.appwriteDatabaseId,
@@ -46,7 +46,7 @@ export class Service{
                 content,
                 featuredImage,
                 status,
-                userId
+                userid
             }
             )
         } catch (error) {
