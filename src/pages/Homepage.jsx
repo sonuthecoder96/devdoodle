@@ -29,7 +29,7 @@ const Homepage = () => {
       <Container>
         <div className="text-center mb-16 px-4 md:gap-100">
           <h1 className="text-4xl sm:text-8xl mt-20 font-bold leading-tight mb-4">
-            Welcome to <span className="gradient-text">DevDoodles</span>
+            Welcome to <span className="gradient-text">DevDoodle</span>
           </h1>
           <p className="text-md sm:text-3xl mt-20 text-blue-200 max-w-3xl mx-auto">
             A creative playground for developers to express, explore, and engage
